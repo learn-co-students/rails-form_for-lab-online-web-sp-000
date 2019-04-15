@@ -1,0 +1,4 @@
+<h1>School Classes</h1>
+<% @school_classes.each do |schoolclass| %>
+<li><a href="/school_classes/<%= schoolclass.id %>"><%= schoolclass.title %></a></li>
+<% end %>

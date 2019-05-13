@@ -1,5 +1,3 @@
-require 'pry'
-
 class SchoolClassesController < ApplicationController
   def new
     @school_class = SchoolClass.new

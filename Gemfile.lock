@@ -194,7 +194,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   byebug
-  capybara
+  capybara (~> 3.13.2)
   coffee-rails (~> 4.1.0)
   database_cleaner
   factory_bot_rails (~> 4.8.2)

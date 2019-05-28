@@ -14,13 +14,15 @@ before_action :set_student, only: [:show, :update, :edit]
   def create
     @student = Student.new(post_params)
     @student.save
-    redirect to student_path(@student)
+    redirect_to student_path(@student)
   end
 
   def edit
   end
 
   def update
+    @student.update(post_params)
+    redirect_to student_path(@student)
   end
 
   def delete

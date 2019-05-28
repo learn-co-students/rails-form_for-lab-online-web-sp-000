@@ -1,9 +1,11 @@
-<%= form_for @student do |f| %>
-  <%= f.label "Student First Name" %><br>
-  <%= f.text_field :first_name %><br>
+<h1> Student Form </h1>
 
-  <%= f.label "Student Last Name" %><br>
-  <%= f.text_field :last_name %><br>
+<%= form_tag students_path, method: "post" do %>
+  <label> First Name </label><br>
+  <%= text_field_tag :'student[first_name]' %><br>
 
-  <%= f.submit "Submit Student" %>
+  <label> Last Name </label><br>
+  <%= text_field_tag :'student[last_name]' %><br>
+
+  <input type="submit" value="Create Student">
 <% end %>

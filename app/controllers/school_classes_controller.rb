@@ -8,7 +8,7 @@ class SchoolClassesController < ApplicationController
     end
 
     def new
-        
+        @school_class = SchoolClass.new
     end
 
     def create
@@ -30,6 +30,6 @@ class SchoolClassesController < ApplicationController
     private
 
     def post_params(*args)
-        params.require(:school).permit(*args)
+        params.require(:school_class).permit(*args)
     end
 end

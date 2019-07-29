@@ -1,0 +1,10 @@
+<h1> All Students</h1>
+
+<%@students.each do |student| %>
+<ul>
+<li>
+<%= link_to student.first_name, student  %>
+<%= student.last_name  %>
+</li>
+</ul>
+<%end%>

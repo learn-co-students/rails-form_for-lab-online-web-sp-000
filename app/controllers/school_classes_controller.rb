@@ -17,6 +17,8 @@ class SchoolClassesController < ApplicationController
   end
 
   def update
+    @school_class.update(class_params(params[:school_class].keys))
+    redirect_to @school_class
   end
 
   private

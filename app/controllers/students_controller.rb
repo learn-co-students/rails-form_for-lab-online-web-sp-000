@@ -19,6 +19,8 @@ class StudentsController < ApplicationController
   end
 
   def update
+    @student.update(student_params(params[:student].keys))
+    redirect_to @student
   end 
 
   private

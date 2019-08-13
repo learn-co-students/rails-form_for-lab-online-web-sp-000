@@ -10,21 +10,21 @@ class StudentsController < ApplicationController
   end
 
 
-  # def create
-  #   @student.create(student_params[:student].keys)
-  #   redirect_to @student
-  # end
+  def create
+    @student = Student.create(student_params(params[:student].keys))
+    redirect_to @student
+  end
 
   def edit
   end
 
   def update
-  end
+  end 
 
   private
-  #   def student_params(*args)
-  #     params.require(:student).permit(*args)
-  #   end
+    def student_params(*args)
+      params.require(:student).permit(*args)
+    end
     def set_student
       @student = Student.find(params[:id])
     end

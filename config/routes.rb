@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/school_classes/:id', to: 'school_classes#show', as: 'school_class'
+  get '/new_school_class', to: 'school_classes#new'
+  post '/school_classes', to: 'school_classes#create'
 
 
 

@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
   end
-  
+
   def new
     @student = Student.new
   end
@@ -32,6 +32,4 @@ class StudentsController < ApplicationController
   def student_params(*args)
     params.require(:student).permit(*args)
   end
-
-end
 end

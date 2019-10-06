@@ -1,3 +1,16 @@
-<h2> Enter new student: </h2>
+<h2>Student Form</h2>
 <%= form_for(@student) do |f| %>
-    <%end%>
+    <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    </div>
+
+    <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    </div>
+    
+    <div>
+    <%= f.submit "Create Student" %>
+    </div>
+<%end%>

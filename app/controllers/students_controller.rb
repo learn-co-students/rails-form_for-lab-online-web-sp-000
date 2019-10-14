@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-    before_action :set_school_class, only: [:show, :edit, :update, :destroy]
+    #before_action :set_school_class, only: [:show, :edit, :update, :destroy]
   
     # GET /school_classes
     # GET /school_classes.json
@@ -10,51 +10,41 @@ class StudentsController < ApplicationController
     # GET /school_classes/1
     # GET /school_classes/1.json
     def show
+      @student = Student.find(params[:id])
     end
   
     # GET /school_classes/new
     def new
-      @school_class = SchoolClass.new
+      @student = Student.new
+      render :action => "new"
     end
   
     # GET /school_classes/1/edit
     def edit
+      @student = Student.find(params[:id])
     end
   
     # POST /school_classes
     # POST /school_classes.json
     def create
-      @school_class = SchoolClass.new(school_class_params)
-  
-      respond_to do |format|
-        if @school_class.save
-          format.html { redirect_to @school_class, notice: 'School class was successfully created.' }
-          format.json { render :show, status: :created, location: @school_class }
-        else
-          format.html { render :new }
-          format.json { render json: @school_class.errors, status: :unprocessable_entity }
-        end
-      end
+      #binding.pry
+      @student = Student.create(params.require(:student).permit(:first_name, :last_name))
+      redirect_to student_path(@student)
+    
     end
   
     # PATCH/PUT /school_classes/1
     # PATCH/PUT /school_classes/1.json
     def update
-      respond_to do |format|
-        if @school_class.update(school_class_params)
-          format.html { redirect_to @school_class, notice: 'School class was successfully updated.' }
-          format.json { render :show, status: :ok, location: @school_class }
-        else
-          format.html { render :edit }
-          format.json { render json: @school_class.errors, status: :unprocessable_entity }
-        end
-      end
+      @student = Student.find(params[:id])
+      @student.update(params.require(:student).permit(:first_name, :last_name))
+      redirect_to student_path(@student)
     end
   
     # DELETE /school_classes/1
     # DELETE /school_classes/1.json
     def destroy
-      @school_class.destroy
+      @student.destroy
       respond_to do |format|
         format.html { redirect_to school_classes_url, notice: 'School class was successfully destroyed.' }
         format.json { head :no_content }
@@ -62,14 +52,8 @@ class StudentsController < ApplicationController
     end
   
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_school_class
-        @school_class = SchoolClass.find(params[:id])
-      end
-  
-      # Never trust parameters from the scary internet, only allow the white list through.
-      def school_class_params
-        params.fetch(:school_class, {})
-      end
+    def post_params(*args)
+      params.require(:student).permit(*args)
+    end
   end
   

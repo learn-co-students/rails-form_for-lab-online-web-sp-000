@@ -8,5 +8,5 @@ describe SchoolClass do
   it 'can be created' do
     expect(@school_class).to be_valid
   end
-
+  
 end

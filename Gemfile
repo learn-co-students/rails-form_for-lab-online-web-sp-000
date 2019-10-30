@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry'
   gem 'spring'
   gem 'rspec-rails'
   gem 'factory_bot_rails', '~>4.8.2'

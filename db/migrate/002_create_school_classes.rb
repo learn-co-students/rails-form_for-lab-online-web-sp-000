@@ -1,5 +1,5 @@
 class CreateSchoolClasses < ActiveRecord::Migration
-  create_table :schoolclass do |t|
+  create_table :school_classes do |t|
     t.string :title
     t.integer :room_number
   end

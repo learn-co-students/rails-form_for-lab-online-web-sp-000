@@ -1014,3 +1014,27 @@ Processing by StudentsController#show as HTML
 Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/students" for 127.0.0.1 at 2019-11-06 10:26:59 -0600
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2019-11-06 10:27:40 -0600
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2019-11-06 10:27:48 -0600
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 0.2ms)
+
+

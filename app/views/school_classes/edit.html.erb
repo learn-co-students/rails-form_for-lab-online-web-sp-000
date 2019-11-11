@@ -1,0 +1,12 @@
+Edit School Class Form
+
+<%=form_for(@school_class) do |f|%>
+
+    Class Room Title:
+    <%=f.text_field :title %> <br>
+
+    Last Name:
+    <%=f.text_field :room_number %> <br>
+    <%= f.submit "Update School class" %>
+
+<% end %>

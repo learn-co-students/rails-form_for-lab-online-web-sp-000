@@ -1,4 +1,3 @@
-class SchoolClass < ApplicationRecord
-  has_many :students
+class SchoolClass < ActiveRecord::Base
 
 end

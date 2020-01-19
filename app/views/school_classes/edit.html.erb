@@ -1,0 +1,10 @@
+<h1>School Class Form</h1>
+<p>Find me in app/views/school_classes/edit.html.erb</p>
+
+<%= form_for @school_class, method: "PATCH" do |f| %>
+   <%= f.label :title, "Class Title: " %>
+   <%= f.text_field :title %><br>
+   <%= f.label :room_number, "Class Room Number: " %>
+   <%= f.text_field :room_number %><br>
+   <%= f.submit "Update School class" %>
+<% end %>

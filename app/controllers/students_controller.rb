@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+    layout "student_form", only: [:new, :edit]
+
     def show
         @student = Student.find(params[:id])
     end
@@ -8,7 +10,9 @@ class StudentsController < ApplicationController
     end
 
     def create
-        @student = Student.create()
+        @student = Student.new(post_params)
+        @student.save
+        redirect_to student_path(@student)
     end
 
     def edit
@@ -16,6 +20,14 @@ class StudentsController < ApplicationController
     end
 
     def update
-        @student = Student.update()
+        @student = Student.find(params[:id])
+        @student.update(post_params)
+        redirect_to student_path(@student)
+    end
+
+    private
+
+    def post_params
+        params.require(:student).permit(:first_name, :last_name)
     end
 end

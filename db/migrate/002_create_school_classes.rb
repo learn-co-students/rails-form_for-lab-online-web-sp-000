@@ -1,8 +1,8 @@
 class CreateSchoolClasses < ActiveRecord::Migration
   def change
     create_table :school_classes do |t|
-      t.string :title, default: "null"
-      t.integer :room_number, default: "null"
+      t.string :title
+      t.integer :room_number
 
       t.timestamps null: false
     end

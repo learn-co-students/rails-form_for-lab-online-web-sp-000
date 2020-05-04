@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2) do
 
   create_table "school_classes", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.integer  "room_number", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "title",       default: "null"
+    t.integer  "room_number", default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "students", force: :cascade do |t|

@@ -4,13 +4,31 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.create!(params.require(:student).permit(:first_name, :last_name))
+    @student = Student.create!(update_or_create)
     redirect_to student_path(@student)
   end
 
-  def show; end
+  def show
+    @student = find_student
+  end
 
-  def edit; end
+  def edit
+    @student = find_student
+  end
 
-  def update; end
+  def update
+    @student = Student.update(update_or_create)
+    redirect_to student_path(@student)
+  end
+
+  private
+
+  def find_student
+    Student.find(params.require(:id))
+  end
+
+  def update_or_create
+    params.require(:student).permit(:first_name, :last_name)
+  end
+
 end

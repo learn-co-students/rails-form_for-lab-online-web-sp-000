@@ -312,3 +312,20 @@ rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
   Rendering /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
   Rendered /Users/admin/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.3ms)
+Started GET "/school_classes/1/edit" for ::1 at 2020-05-12 17:25:13 -0400
+Processing by SchoolClassesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchoolClass Load (0.3ms)[0m  [1m[34mSELECT  "school_classes".* FROM "school_classes" WHERE "school_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering school_classes/edit.html.erb within layouts/application
+  Rendered school_classes/edit.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 85ms (Views: 60.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/students" for ::1 at 2020-05-12 17:25:18 -0400
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 0.8ms)
+
+

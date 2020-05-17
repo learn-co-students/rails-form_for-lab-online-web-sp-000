@@ -1,0 +1,3 @@
+class Student > ApplicationContoller
+
+end

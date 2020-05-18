@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
         @students = Student.all
     end
 
-    def new 
+    def new
+        @post = Student.new
     end
 end

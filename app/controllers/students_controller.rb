@@ -31,5 +31,4 @@ class StudentsController < ApplicationController
     params.require(:student).permit(*args)
   end
 
-
 end

@@ -1,0 +1,14 @@
+<% @school_classes.each do |school_class| %>
+  <div><%= school_class.title %></div>
+  <div><%= school_class.room_number %></div>
+
+<% end %>
+    def change
+      create_table :school_classes do |t|
+        t.string :title
+        t.integer :room_number
+  
+        t.timestamps null: false
+      end
+    end
+  end

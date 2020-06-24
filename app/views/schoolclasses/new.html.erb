@@ -1,0 +1,9 @@
+<%= form_tag posts_path do %>
+    <label>School Class title:</label><br>
+    <%= text_field_tag :title %><br>
+  
+    <label>School Class room number</label><br>
+    <%= text_area_tag :room_number %><br>
+  
+    <%= submit_tag "Submit School Class" %>
+  <% end %>

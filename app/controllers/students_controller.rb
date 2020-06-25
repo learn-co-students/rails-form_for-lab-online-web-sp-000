@@ -14,8 +14,8 @@ class StudentsController < ApplicationController
 
     def create
         @students = Student.new
-        @students.first_name = params[:first_name]
-        @students.last_name = params[:last_name]
+        @students.first_name = params[:student][:first_name]
+        @students.last_name = params[:student][:last_name]
         @students.save
         redirect_to student_path(@students)
     end 

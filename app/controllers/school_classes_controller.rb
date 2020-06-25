@@ -14,10 +14,10 @@ class SchoolClassesController < ApplicationController
 
     def create
         @school_class = SchoolClass.new
-        @school_class.first_name = params[:first_name]
-        @school_class.last_name = params[:last_name]
+        @school_class.title = params[:title]
+        @school_class.room_number = params[:room_number]
         @school_class.save
-        redirect_to school_class(@school_class)
+        redirect_to school_class_path(@school_class)
     end 
 
     def edit
@@ -26,7 +26,7 @@ class SchoolClassesController < ApplicationController
 
     def update
         @school_class = SchoolClass.find(params[:id])
-        @school_class.update(params.require(:schoolclass).permit(:first_name, :last_name))
+        @school_class.update(params.require(:schoolclass).permit(:title, :room_number))
         redirect_to schoolclass_path(@school_class)
     end 
 

@@ -1,0 +1,12 @@
+<h1>School Class Form</h1>
+
+<%= form_tag school_classes_path do %>
+  <label>school_class title:</label><br>
+  <%= text_field_tag :'school_class[title]' %><br>
+
+  <label>school_class description:</label><br>
+  <%= text_area_tag :'school_class[room_number]' %><br>
+
+  <%= submit_tag "Create School class" %>
+<% end %>
+

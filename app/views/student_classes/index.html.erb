@@ -1,0 +1,5 @@
+<h1>All Student Classes</h1>
+<% @student_classes.each do |student_class| %>
+    <p><%= link_to(student_class.title, student_class) %></p>
+    <p><%= student_class.room_number %></p>
+<% end %>

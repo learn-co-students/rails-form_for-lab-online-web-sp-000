@@ -12,9 +12,9 @@ class StudentsController < ApplicationController
 	end
 
 	def create
-	  @student = Student.new
-	  # @student.title = params[:title]
-	  # @student.description = params[:description]
+	  @student = Student.new(student_params)
+	  @student.first_name = params[:first_name]
+	  @student.last_name = params[:last_name]
 	  @student.save
 	  redirect_to student_path(@student)
 	end
@@ -24,11 +24,13 @@ class StudentsController < ApplicationController
 	end
 
 	def update
-	  # @student = Student.find(params[:id])
-	  # @student.update(params.require(:student).permit(:title, :description))
-	  # redirect_to student_path(@student)
+	  @student = Student.find(params[:id])
+	  @student.update(student_params)
+	  redirect_to student_path(@student)
 	end
 
-
+	def student_params
+		params.require(:student).permit(:first_name, :last_name)
+	end
 
 end

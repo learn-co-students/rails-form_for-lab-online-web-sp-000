@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 2) do
 
   create_table "school_classes", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.integer  "room_number", null: false
+    t.string   "title"
+    t.integer  "room_number"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

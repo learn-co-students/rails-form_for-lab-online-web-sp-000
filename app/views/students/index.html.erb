@@ -1,0 +1,5 @@
+<%@students.each do |s| %>
+<%if s.first_name%>
+<%= link_to s.to_s, student_path(s) %><br>
+<%end%>
+<%end%>

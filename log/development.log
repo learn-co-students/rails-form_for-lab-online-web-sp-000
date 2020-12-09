@@ -433,3 +433,115 @@ Processing by SchoolClassesController#show as HTML
 Completed 200 OK in 44ms (Views: 37.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/students/new" for 127.0.0.1 at 2020-12-08 20:34:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `student_first_name' for #<Student:0x00007f0528682598>):
+    1: <h3>Student Form</h3>
+    2: <%= form_for @student do |f|%>
+    3: <label>First Name</label>
+    4: <%=f.text_field :student_first_name%><br>
+    5: <%=f.text_field :student_last_name%><br>
+    6: <%=f.submit "Create Student"%>
+    7: 
+  
+app/views/students/new.html.erb:4:in `block in _app_views_students_new_html_erb__741338599862971240_69830064885840'
+app/views/students/new.html.erb:2:in `_app_views_students_new_html_erb__741338599862971240_69830064885840'
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.5ms)
+Started GET "/students/new" for 127.0.0.1 at 2020-12-08 20:37:57 -0600
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:4: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...(f.text_field :first_name, as :student_first_name);@output_b...
+...                              ^
+/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:5: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...=(f.text_field :last_name, as :student_last_name);@output_bu...
+...                              ^):
+  
+app/views/students/new.html.erb:4: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/students/new.html.erb:5: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.1ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.6ms)
+Started GET "/students/new" for 127.0.0.1 at 2020-12-08 20:38:36 -0600
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:4: syntax error, unexpected ',', expecting ')'
+...end=(f.text_field (:first_name, as :student_first_name) );@o...
+...                              ^
+/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:5: syntax error, unexpected ',', expecting ')'
+...pend=(f.text_field (:last_name, as :student_last_name));@out...
+...                              ^
+/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:9: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/students/new.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/students/new.html.erb:5: syntax error, unexpected ',', expecting ')'
+app/views/students/new.html.erb:9: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.8ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.8ms)
+Started GET "/students/new" for 127.0.0.1 at 2020-12-08 20:46:38 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:4: syntax error, unexpected ',', expecting ')'
+...end=(f.text_field (:first_name, as :student_first_name) );@o...
+...                              ^
+/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:5: syntax error, unexpected ',', expecting ')'
+...pend=(f.text_field (:last_name, as :student_last_name));@out...
+...                              ^
+/home/joseph/code/labs/rails-form_for-lab-online-web-sp-000/app/views/students/new.html.erb:9: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/students/new.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/students/new.html.erb:5: syntax error, unexpected ',', expecting ')'
+app/views/students/new.html.erb:9: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/joseph/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.3ms)

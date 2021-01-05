@@ -1,0 +1,5 @@
+<h3>Students</h3>
+
+<% @students.each do |s| %>
+  <%= link_to s.to_s, student_path(s) %><br>
+<% end %>

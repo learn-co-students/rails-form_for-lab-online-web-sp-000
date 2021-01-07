@@ -1,7 +1,4 @@
 class SchoolClassesController < ApplicationController
-    def index
-		@school_class = SchoolClass.all
-	end
 
 	def show
 		@school_class = SchoolClass.find(params[:id])

@@ -1,8 +1,7 @@
-class StudentsController < ApplicationController
-
+class StudentController < ApplicationController
    def index
-     @student = Student.all
-   end 
+   @student = Student.all
+ end 
  
   def new 
   end 
@@ -14,17 +13,16 @@ class StudentsController < ApplicationController
   end 
   
   def show 
-    @schoolClass = Student.find(params[:id])
+    @student = Student.find(params[:id])
   end 
   
   def update
-      @schoolClass = Student.find(params[:id])
-      
+      @student = Student.find(params[:id])
       redirect_to student_path(@student)
   end 
   
   def edit #to render the form
-      @schoolClass = Student.find(params[:id])
+      @student = Student.find(params[:id])
   end
-  
+
 end

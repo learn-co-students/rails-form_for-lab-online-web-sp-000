@@ -1,11 +1,11 @@
-<h1>School Class Form</h1>
+<h3>School Class Form</h3>
 
-<%= form_tag("/school_classes") do %>
-  <%= label_tag('school_class[title]', "Title") %>
-  <%= text_field_tag('school_class[title]') %>
- 
-  <%= label_tag('school_class[room_number]', "Room") %>
-  <%= text_field_tag('school_class[room_number]') %>
- 
-  <%= submit_tag "Create School class" %>
+<%= form_for(@school_class) do |f| %>
+  <label>Course Name:</label><br>
+  <%= f.text_field :title %><br>
+
+  <label>Room Number</label><br>
+  <%= f.text_field :room_number %><br>
+
+  <%= f.submit %>
 <% end %>

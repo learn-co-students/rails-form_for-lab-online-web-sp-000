@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe Student do
   before(:each) do
     @student = Student.create!(first_name: "Daenerys", last_name: "Targaryen")

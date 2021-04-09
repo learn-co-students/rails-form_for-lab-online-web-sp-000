@@ -1,9 +1,9 @@
-<%= form_for @student do |f| %>
-  <%= f.label 'Student First Name' %><br>
-  <%= f.text_field :student_first_name %><br>
+<%= form_for(@school_class) do |f| %>
+  <%= f.label 'School Class Title' %><br>
+  <%= f.text_field :title %><br>
  
-  <%= f.label 'Student Last Name' %><br>
-  <%= f.text_field :student_last_name %><br>
+  <%= f.label 'School Class Room Number' %><br>
+  <%= f.text_field :room_number %><br>
  
-  <%= f.submit "Update Student" %>
+  <%= f.submit "Update School class" %>
 <% end %>

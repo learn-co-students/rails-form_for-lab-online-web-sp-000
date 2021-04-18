@@ -1,35 +1,35 @@
 class SchoolClassesController < ApplicationController
+
   def new
-    @schoolclass = SchoolClass.new
+      @school_class = SchoolClass.new
   end
 
-  def create
-    @schoolclass = SchoolClass.new(school_class_params(:title, :room_number))
-    @schoolclass.save
-    redirect_to school_class_path(@schoolclass)
+  def create #use strong parameters
+    @school_class = SchoolClass.create(school_class_params(:title, :room_number))
+    redirect_to school_class_path(@school_class)
   end
 
   def show
-    @schoolclass = SchoolClass.find(params[:id])
-  end
-
-  def index
-    @schoolclasses = SchoolClass.all
+      @school_class = SchoolClass.find(params[:id])
   end
 
   def edit
-    @schoolclass = SchoolClass.find(params[:id])
+    @school_class = SchoolClass.find(params[:id])
   end
 
-  def update
-    @schoolclass = SchoolClass.find(params[:id])
-    @schoolclass.update(school_class_params(:title, :room_number))
-    redirect_to school_class_path(@schoolclass)
+  def update #use strong parameters
+      @school_class = SchoolClass.find(params[:id])
+      @school_class.update(school_class_params(:title, :room_number))
+      redirect_to school_class_path(@school_class)
+  end
+
+  def index
+      @school_classes = SchoolClass.all
   end
 
   private
 
   def school_class_params(*args)
-    params.require(:school_class).permit(*args)
+      params.require(:school_class).permit(*args)
   end
 end

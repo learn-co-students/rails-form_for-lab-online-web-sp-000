@@ -1,0 +1,11 @@
+<h1> School Class Form </h1>
+
+<%= form_for school_classes_path do |school_class| %>
+<%= school_class.label :school_class_title %>
+<%= school_class.text_field :school_class_title %>
+
+<%= school_class.label :'school_class_room_number' %>
+<%= school_class.number_field :'school_class_room_number' %>
+
+<%= school_class.submit "Submit School Class Form" %>
+<% end %>
